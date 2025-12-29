@@ -4,5 +4,12 @@ export interface Nurse {
 }
 
 export interface BaseSetting {
-  isDay: boolean
+  isDay?: boolean
+}
+
+export interface Days {
+  date: Date
+  dayLabel: string
+  dayNum: number
+  dayOfWeek: number
 }

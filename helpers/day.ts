@@ -20,3 +20,16 @@ export const getMonthDays = (year: number, month: number) => {
     }
   })
 }
+
+/**
+ * 다음 달과 연도 가져오기
+ * @returns { year, month }
+ */
+export const getNextMonth = () => {
+  const next = dayjs().add(1, 'month')
+
+  return {
+    year: next.year(),
+    month: next.month() + 1, // month는 0~11 이라 +1
+  }
+}

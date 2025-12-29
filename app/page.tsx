@@ -16,12 +16,18 @@ const Layout = () => {
     setSetting(value)
   }
 
+  const handleChangeNurse = (value: Nurse[]) => {
+    setNurse(value)
+  }
+
   return (
-    <main className="flex flex-col items-center justify-center px-[60px] py-[30px] box-border w-full min-h-screen gap-[20px] bg-[#3BA9E0]">
-      <div className="flex flex-col p-[20px] box-border items-center justify-center flex-1 w-full max-w-[1024px] h-full gap-[20px] bg-[white] rounded-[24px]">
-        <Header />
-        <Setting handleChangeSetting={handleChangeSetting} />
-        <Schedule />
+    <main className="min-h-screen flex w-full bg-[#3BA9E0] px-[60px] py-[30px]">
+      <div className="flex flex-col flex-1 w-full mx-auto gap-[20px]">
+        <div className="flex flex-col flex-1 gap-[20px] bg-white rounded-[24px]  p-[20px]">
+          <Header />
+          <Setting setting={setting} handleChangeSetting={handleChangeSetting} />
+          <Schedule nurse={nurse} handleChangeNurse={handleChangeNurse} />
+        </div>
       </div>
     </main>
   )
